@@ -1,0 +1,251 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	display: block;
+}
+span {
+	color: rgb(255, 255, 255);;
+	font-size: 22px;
+	font-family: "Myriad Pro", sans-serif;
+	line-height: 1.2;
+}
+#sliders {
+	transition: all 1s ease;
+}
+#mini-sliders {
+	transition: all 1s ease;
+}
+.background {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+.slide {
+	position: relative;
+}
+.container {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.horizontal-sliders {
+	display: inline-flex;
+	transform: translateX(-200vw);
+}
+.dots {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	position: fixed;
+	top: 50%;
+	left: 95%;
+}
+.dot {
+	height: 15px;
+	width: 15px;
+	border-radius: 100%;
+	background-color: white;
+	margin: 5px;
+}
+.dot.active {
+	background-color: orange;
+}
+.dot:hover {
+	background-color: orange;
+	cursor: pointer;
+}
+.flex {
+	display: flex;
+	width: 60%;
+	justify-content: space-between;
+	margin-top: 25px;
+}
+.input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	position: fixed;
+	top: 285vh;
+}
+.range {
+	background-color: rgba(209, 234, 255, 0.3);
+	border-style: none;
+	width: 60%;
+	height: 20px;
+	outline: none;
+	min-width: 0%;
+	max-width: 100%;
+}
+.progress {
+	height: 100%;
+	background-color: rgb(209, 234, 255);
+}
+.layer {
+	position: absolute;
+	top: 94vh;
+	width: 100%;
+}
+.thumb {
+	position: relative;
+	border-radius: 3px;
+	width: 50px;
+	height: 60px;
+	left: 98%;
+	top: -40px;
+	background-image: url('img/third-slide/mini-slider/input-thumb.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	touch-action: none;
+}
+.img-thumb {
+	width: 60px;
+	height: 70px;
+	cursor: pointer;
+}
+.pulse1 {
+	width: 50px;
+	height: 50px;
+	top: 11.5%;
+	left: 55%;
+	position: absolute;
+}
+.pulse2 {
+	width: 35px;
+	height: 35px;
+	top: 18.4%;
+	left: 26.2%;
+	position: absolute;
+}
+.pulse3 {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width: 20px;
+	height: 20px;
+	top: 23.3%;
+	left: 46.8%;
+	position: absolute;
+}
+.pulse4 {
+	width: 20px;
+	height: 20px;
+	top: 22.4%;
+	left: 80.1%;
+	position: absolute;
+}
+.pulsatingCircle span {
+	transform: translate(-50%,-50%);
+}
+.pulsatingCircle {
+	height: 100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:relative;
+}
+.firstCircle,
+.secondCircle,
+.thirdCircle {
+	background-color:rgba(222,121,27, 0.2);
+	border:1px rgb(222,121,27) solid;
+	border-radius:50%;
+	position:absolute;
+}
+.centralCircle {
+	background: -webkit-radial-gradient( 50% 50%, circle closest-side, rgb(222,121,27) 1%, rgb(207,20,55) 100%);
+	border-radius:50%;
+	position:absolute;
+	width: 30%;
+	height:30%;
+	animation:15000ms pulse-dot 100ms ease-in-out infinite;
+	-webkit-animation:1500ms pulse-dot 100ms ease-in-out infinite;
+}
+@keyframes pulse-dot {
+	0% {
+		transform: scale(.5);
+	}
+	50% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(.5);
+	}
+}
+@-webkit-keyframes pulse-dot {
+	0% {
+		transform: scale(.5);
+	}
+	50% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(.5);
+	}
+}
+.firstCircle {
+	width: 60%;
+	height:60%;
+	animation:1500ms pulseIn 100ms ease-in-out infinite;
+	-webkit-animation:1500ms pulseIn 100ms ease-in-out infinite;
+}
+.secondCircle {
+	width: 90%;
+	height:90%;
+	animation:1500ms pulseIn 300ms ease-in-out infinite;
+	-webkit-animation:1500ms pulseIn 300ms ease-in-out infinite;						
+}
+.thirdCircle {
+	width: 100%;
+	height:100%;
+	top:50%;
+	left: 50%;
+}
+@keyframes pulseIn {
+	0% {
+		transform:scale(0.1);
+	}
+	50% {
+		transform:scale(0.5);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
+@-webkit-keyframes pulseIn {
+	0% {
+		transform:scale(0.1);
+	}
+	50% {
+		transform:scale(0.5);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
+
+.pulsating {
+	height: 100%;
+	width: 100%;
+	animation:20000ms pulseIn ease-in-out infinite;
+	-webkit-animation:2000ms pulseIn ease-in-out infinite;
+	position: absolute;
+	border-radius: 50%;
+	background-color:rgba(222,121,27, 0.2);
+	border:1px rgb(222,121,27) solid;
+}
+
+.pulsating:nth-child(1) {
+	animation-delay: none;
+}
+.pulsating:nth-child(2) {
+	animation-delay: 700ms;
+}
+.pulsating:nth-child(3) {
+	animation-delay: 1400ms;
+}
+.pulsating:nth-child(4) {
+	animation: none;
+}
